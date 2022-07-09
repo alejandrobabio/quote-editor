@@ -9,6 +9,7 @@
                     class: "btn btn--light" %>
       <%= link_to "Edit",
                   edit_quote_path(quote),
+                  data: { turbo_frame: dom_id(quote) },
                   class: "btn btn--light" %>
     </div>
   </div>
