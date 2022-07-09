@@ -16,7 +16,7 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
 
     if @quote.save
-      flash[:notice] = "Quote was successfully created."
+      flash.now[:notice] = "Quote was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class QuotesController < ApplicationController
 
   def update
     if @quote.update(quote_params)
-      flash[:notice] = "Quote was successfully updated."
+      flash.now[:notice] = "Quote was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class QuotesController < ApplicationController
 
   def destroy
     @quote.destroy
-    flash[:notice] = "Quote was successfully destroyed."
+    flash.now[:notice] = "Quote was successfully destroyed."
   end
 
   private
