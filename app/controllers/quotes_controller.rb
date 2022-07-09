@@ -35,7 +35,7 @@ class QuotesController < ApplicationController
 
   def destroy
     @quote.destroy
-    redirect_to quotes_path, notice: "Quote was successfully destroyed."
+    flash[:notice] = "Quote was successfully destroyed."
   end
 
   private
